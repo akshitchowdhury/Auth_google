@@ -1,6 +1,7 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
-
+import { signIn } from 'next-auth/react'
 const SignInBtn = () => {
   return (
     <div
@@ -14,7 +15,9 @@ const SignInBtn = () => {
     /> 
     <span className='bg-blue-500 px-4 py-3
     text-white '>
-      <button>Sign In With Google</button>
+      <button onClick={
+        ()=> signIn("google") 
+      }>Sign In With Google</button>
       </span>
     </div>
   )
